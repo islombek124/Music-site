@@ -17,6 +17,7 @@ html,body {
     height: 100%;
     scroll-behavior: smooth;
     position: relative;
+    overflow-x: hidden;
 }
 
 .container {
@@ -39,7 +40,7 @@ header {
         .search {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center;    
             input {
                 background-color: #F8FAFB;
                 border-radius: 95px;
@@ -72,6 +73,18 @@ header {
                         color: #FE8F5D;
                     }
                 }
+            }
+        }
+        .toggle {
+            display: none;
+            cursor: pointer;
+            span{
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background-color: #262626;
             }
         }
     }
@@ -192,9 +205,7 @@ main {
         .musics {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            height: 71%;
+            width: 80%;
             .music {
                 display: flex;
                 align-items: center;
@@ -204,6 +215,7 @@ main {
                 background-color: #F8FAFB;
                 border-radius: 10px;
                 padding: 0 16px;
+                margin-top: 10px;
                 .music__play {
                     display: flex;
                     align-items: center;
@@ -292,34 +304,243 @@ footer {
     }
 }
 
+.wplayer {
+    width: 100%;
+    box-shadow: 0 0 6px #A2A2A2;
+    background-color: #A2A2A2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 997;
+    height: 80px;
+    .mgf {
+        position: static;
+        width: 100%;
+        margin: 0 15px 0 0;
+        height: 10px;
+        background-color: #D9D9D9;
+        margin: 0 auto;
+        top: 0;
+    }
+    .wrapper {
+        max-width: 1100px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        .audioplayer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #A2A2A2;
+            .player__play {
+                display: flex;
+                align-items: center;
+                ion-icon:first-child {
+                    width: 31px;
+                    height: 28px;
+                    color: #D9D9D9;
+                    margin-right: 26px;
+                    cursor: pointer;
+                }
+                .play {
+                    width: 60px;
+                    height: 60px;
+                    cursor: pointer;
+                    background-color: #D9D9D9;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                ion-icon:nth-child(3) {
+                    width: 31px;
+                    height: 28px;
+                    color: #D9D9D9;
+                    margin-left: 26px;
+                    cursor: pointer;
+                }
+            }
+            .music__info {
+                display: flex;
+                align-items: center;
+                margin-left: 70px;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                }
+                .music__name {
+                    margin-left: 20px;
+                    h3 {
+                        color: white;
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+            .music__controls {
+                margin-left: 300px;
+                ion-icon {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
 
+
+
+
+
+
+
+@media screen and (max-width: 1120px) {
+    header {
+        nav {
+            .search {
+                input {
+                    width: 450px;
+                }
+            }
+        }
+    }
+    main {
+        gap: 50px;
+        margin-top: 70px;
+        .main__right {
+            width: 55%;
+            .categories {
+                .line1 {
+                    .categorie__1,
+                    .categorie__2{
+                        width: 80%;
+                        text-align: center;
+                    }
+                }
+                .line2 {
+                    .categorie__2,
+                    .categorie__4{
+                        width: 80%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        margin-top: 80px;
+    }
+}
 
 
 
 
 @media screen and (max-width: 600px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        .main__right {
-            .categories {
-                display: flex;
-                justify-content: flex-start;
-                width: 80%;
-                .line1 {
-                    display: flex;
-                    flex-direction: column;
-                    width: 80%;
+
+    .container {
+        width: 96%;
+        overflow-x: hidden;
+    }
+    header {
+        nav {
+            .search {
+                input {
+                    width: 200px;
+                    border-radius: 5px;
                 }
-                .line2{
-                    display: flex;
-                    flex-direction: column;
+            }
+            .toggle{
+                display: block;
+                margin-right: 10px;
+            }
+            .toggle.active span:nth-child(2) {
+                display: none;
+            }
+            .toggle.active span:nth-child(1){
+                transform: rotate(45deg);
+                position: relative;
+                top: 4px;
+            }
+            .toggle.active span:nth-child(3){
+                transform: rotate(-45deg);
+                position: relative;
+                bottom: 4px;
+            }
+            ul{
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: rgb(245, 255, 255);
+                width: 100%;
+                z-index: 10000;
+                text-align: center;
+                transition: 0.3s;
+                &.active{
+                    right: 0;
                 }
-                .categorie__1{
-                    width: 80%;
+                li{
+                    margin: 16px 0;
                 }
             }
         }
     }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+        height: max-content;
+        .main__right {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .categories {
+                display: flex;
+                width: 80%;
+                .line1 {
+                    display: flex;
+                    flex-direction: column;
+                    width: 320px;
+                    .categorie__1,
+                    .categorie__2{
+                        width: 90%;
+                        height: 100px;
+                    }
+                }
+                .line2{
+                    display: flex;
+                    flex-direction: column;
+                    width: 320px;
+                    .categorie__3,
+                    .categorie__4{
+                        width: 90%;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        margin-top: 80px;
+        .contents {
+            .top {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.music__active {
+    box-shadow: 0 0 3px 0 gray;
 }
