@@ -416,19 +416,27 @@ footer {
             width: 55%;
             .categories {
                 .line1 {
-                    .categorie__1,
+                    .categorie__1{
+                        width: 100%;
+                        text-align: center;
+                    }
                     .categorie__2{
-                        width: 80%;
+                        width: 100%;
                         text-align: center;
                     }
                 }
                 .line2 {
-                    .categorie__2,
+                    .categorie__3{
+                        width: 100%;
+                    }
                     .categorie__4{
-                        width: 80%;
+                        width: 100%;
                         text-align: center;
                     }
                 }
+            }
+            .musics {
+                width: 100%;
             }
         }
     }

@@ -609,15 +609,23 @@ footer .contents .bottom p {
   main .main__right {
     width: 55%;
   }
-  main .main__right .categories .line1 .categorie__1,
-  main .main__right .categories .line1 .categorie__2 {
-    width: 80%;
+  main .main__right .categories .line1 .categorie__1 {
+    width: 100%;
     text-align: center;
   }
-  main .main__right .categories .line2 .categorie__2,
-  main .main__right .categories .line2 .categorie__4 {
-    width: 80%;
+  main .main__right .categories .line1 .categorie__2 {
+    width: 100%;
     text-align: center;
+  }
+  main .main__right .categories .line2 .categorie__3 {
+    width: 100%;
+  }
+  main .main__right .categories .line2 .categorie__4 {
+    width: 100%;
+    text-align: center;
+  }
+  main .main__right .musics {
+    width: 100%;
   }
   footer {
     margin-top: 80px;
