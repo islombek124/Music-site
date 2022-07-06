@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./scss/style.css">
     <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./scss/player.css">
 </head>
 <body>
     <div class="container">
@@ -267,37 +268,44 @@
                 </div>
             </div>
         </footer>
-        <!-- <div class="wplayer">
-            <div class="mgf"></div>
-            <div class="wrapper">
-                <div class="audioplayer">
-                    <div class="player__play">
-                        <ion-icon name="play-back"></ion-icon>
-                        <div class="play">
-                            <svg width="21" height="26" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M30.5 17.134C31.1667 17.5189 31.1667 18.4811 30.5 18.866L2 35.3205C1.33334 35.7054 0.5 35.2243 0.5 34.4545L0.5 1.54552C0.5 0.77572 1.33333 0.294593 2 0.679493L30.5 17.134Z" fill="#FB9802"/>
-                            </svg>  
-                        </div>                  
-                        <ion-icon name="play-forward"></ion-icon>
-    
-                        <div class="music__info">
-                            <img src="https://mp3uk.net/templates/mp3uk/dleimages/no_image.jpg" alt="">
-                            <div class="music__name">
-                                <h3>Mirjalol Nematov </h3>
-                                <p>Bag'ritosh</p>
-                            </div>
-                        </div>
-                        <div class="music__controls">
-                            <ion-icon name="arrow-down"></ion-icon>
-                        </div>
-                    </div>
-                    <audio preload="none" controls style="width: 0; height: 0; visibility: hidden;">
-                        <source src="./Mirjalol_Nematov-Bagritosh.mp3">
-                    </audio>
-                </div>
-            </div> -->
     </div>
 
+    
+    <div class="player">
+        <div class="details">
+            <div class="track-name">Bag'ritosh</div>
+            <div class="track-artist">Mirjalol Nematov</div>
+        </div>
+
+        <div class="buttons">
+            <div class="prev-track" onclick="prevTrack()">
+                <ion-icon name="play-skip-back" class="step-backward"></ion-icon>
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+                <ion-icon name="play-circle" class="play-circle"></ion-icon>
+            </div>
+            <div class="next-track" onclick="nextTrack()">
+                <ion-icon name="play-skip-forward" class="step-forward"></ion-icon>
+            </div>
+        </div>
+
+        <div class="slider_container">
+        <div class="current-time">00:00</div>
+        <input type="range" min="1" max="100"
+            value="0" class="seek_slider" onchange="seekTo()">
+        <div class="total-duration">00:00</div>
+        </div>
+
+        <div class="slider_container">
+            <ion-icon name="volume-low" class="volume-down"></ion-icon>
+            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <ion-icon name="volume-high" class="volume-up"></ion-icon>
+        </div>
+        <div class="music__download">
+            <a href="http://www.yoshlar.com/load/0-0-1-16522-20" download="">
+                <ion-icon name="arrow-down" class="arrow-down"></ion-icon>
+        </div>
+    </div>
 
 
 
