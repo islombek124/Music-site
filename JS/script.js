@@ -11,26 +11,3 @@ addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }));
-
-let musics = document.querySelectorAll('.music');
-
-function hideMusicContents(){
-    musics.forEach(function(music){
-        music.classList.remove('music__active');
-    });
-}
-
-function showTabContent(i){
-    musics[i].classList.add('music__active');
-}
-
-musics.forEach(function(item, i){
-    item.addEventListener('click', function(){
-        console.log(i);
-        hideMusicContents();
-        showTabContent(i);
-    });
-});
-
-hideMusicContents();
-showTabContent();
