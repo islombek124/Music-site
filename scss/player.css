@@ -7,7 +7,6 @@
         background-color: white;
         position: sticky;
         bottom: 0;
-        overflow: hidden;
     }
     
     .details {
@@ -18,11 +17,11 @@
     }
     
     .track-name {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .track-artist {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     
     .buttons {
